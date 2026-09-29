@@ -8,11 +8,11 @@ export default function Navbar() {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="bg-emerald-950 text-white sticky top-0 z-50 shadow-lg shadow-emerald-950/20">
+    <nav className="bg-emerald-950 text-white sticky top-0 z-50 shadow-lg shadow-emerald-950/20" aria-label="Main navigation" role="navigation">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-18 py-2">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 group">
+          <Link to="/" className="flex items-center gap-3 group" aria-label="Brew & Bean - Home">
             <div className="w-10 h-10 bg-gradient-to-br from-amber-400 to-amber-600 rounded-full flex items-center justify-center shadow-md shadow-amber-500/20 group-hover:scale-110 transition-transform duration-300">
               <span className="text-lg">☕</span>
             </div>

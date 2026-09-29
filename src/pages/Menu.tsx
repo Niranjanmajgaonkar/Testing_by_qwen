@@ -1,4 +1,41 @@
 import { useState } from 'react';
+import SEO from '../components/SEO';
+
+const menuJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Menu",
+  "name": "Brew & Bean Coffee Menu",
+  "description": "Explore our complete menu of handcrafted coffees, teas, pastries, and specialty drinks.",
+  "url": "https://brewandbean.in/menu",
+  "hasMenuSection": [
+    {
+      "@type": "MenuSection",
+      "name": "Hot Coffee",
+      "hasMenuItem": [
+        { "@type": "MenuItem", "name": "Espresso", "description": "Rich, bold single shot", "offers": { "@type": "Offer", "price": "120", "priceCurrency": "INR" } },
+        { "@type": "MenuItem", "name": "Cappuccino", "description": "Espresso with steamed milk foam", "offers": { "@type": "Offer", "price": "180", "priceCurrency": "INR" } },
+        { "@type": "MenuItem", "name": "Latte", "description": "Smooth espresso with creamy milk", "offers": { "@type": "Offer", "price": "200", "priceCurrency": "INR" } },
+        { "@type": "MenuItem", "name": "Mocha", "description": "Chocolate meets espresso perfection", "offers": { "@type": "Offer", "price": "220", "priceCurrency": "INR" } }
+      ]
+    },
+    {
+      "@type": "MenuSection",
+      "name": "Cold Coffee",
+      "hasMenuItem": [
+        { "@type": "MenuItem", "name": "Iced Latte", "description": "Chilled espresso with cold milk", "offers": { "@type": "Offer", "price": "220", "priceCurrency": "INR" } },
+        { "@type": "MenuItem", "name": "Cold Brew", "description": "Slow-steeped for 12 hours", "offers": { "@type": "Offer", "price": "240", "priceCurrency": "INR" } }
+      ]
+    },
+    {
+      "@type": "MenuSection",
+      "name": "Pastries",
+      "hasMenuItem": [
+        { "@type": "MenuItem", "name": "Croissant", "description": "Buttery, flaky French classic", "offers": { "@type": "Offer", "price": "150", "priceCurrency": "INR" } },
+        { "@type": "MenuItem", "name": "Chocolate Cake", "description": "Rich, moist chocolate goodness", "offers": { "@type": "Offer", "price": "180", "priceCurrency": "INR" } }
+      ]
+    }
+  ]
+};
 
 const categories = ['All', 'Hot Coffee', 'Cold Coffee', 'Tea', 'Pastries', 'Specials'];
 
@@ -45,6 +82,14 @@ export default function Menu() {
 
   return (
     <div className="min-h-screen">
+      <SEO
+        title="Menu"
+        description="Explore Brew & Bean's complete menu - handcrafted hot coffees, cold brews, specialty teas, fresh pastries & unique seasonal specials. Starting at just ₹100."
+        canonical="/menu"
+        keywords="coffee menu, espresso menu, cappuccino, cold brew, iced latte, matcha latte, pastries, croissant, coffee prices, cafe menu pune"
+        jsonLd={menuJsonLd}
+      />
+
       {/* Header */}
       <section className="relative bg-gradient-to-br from-emerald-950 via-emerald-900 to-slate-900 py-24 overflow-hidden">
         <div className="absolute inset-0 opacity-10">

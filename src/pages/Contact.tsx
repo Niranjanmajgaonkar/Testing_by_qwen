@@ -1,4 +1,38 @@
 import { useState } from 'react';
+import SEO from '../components/SEO';
+
+const contactJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "CafeOrCoffeeShop",
+  "name": "Brew & Bean - Premium Coffee Shop",
+  "image": "https://brewandbean.in/og-image.jpg",
+  "url": "https://brewandbean.in",
+  "telephone": "+919876543210",
+  "email": "hello@brewandbean.in",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "123 Coffee Lane, Koregaon Park",
+    "addressLocality": "Pune",
+    "addressRegion": "Maharashtra",
+    "postalCode": "411001",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 18.5362,
+    "longitude": 73.8938
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+91-98765-43210",
+    "contactType": "customer service",
+    "email": "hello@brewandbean.in",
+    "availableLanguage": ["English", "Hindi", "Marathi"]
+  },
+  "hasMap": "https://maps.google.com/?q=18.5362,73.8938",
+  "parkingAvailable": true,
+  "wifiAvailable": true
+};
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -24,6 +58,14 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen">
+      <SEO
+        title="Contact Us"
+        description="Visit Brew & Bean at 123 Coffee Lane, Koregaon Park, Pune. Call +91 98765 43210 or email us. Open Mon-Fri 7AM-9PM, Sat-Sun 8AM-10PM. Free parking & WiFi available."
+        canonical="/contact"
+        keywords="coffee shop contact, brew and bean pune, cafe koregaon park, coffee shop address, coffee shop phone number, cafe near me pune"
+        jsonLd={contactJsonLd}
+      />
+
       {/* Header */}
       <section className="relative bg-gradient-to-br from-emerald-950 via-emerald-900 to-slate-900 py-24 overflow-hidden">
         <div className="absolute inset-0 opacity-10">

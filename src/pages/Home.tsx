@@ -1,8 +1,69 @@
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
+
+const homeJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "CafeOrCoffeeShop",
+  "name": "Brew & Bean - Premium Coffee Shop",
+  "image": "https://brewandbean.in/og-image.jpg",
+  "url": "https://brewandbean.in",
+  "telephone": "+919876543210",
+  "priceRange": "₹₹",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "123 Coffee Lane, Koregaon Park",
+    "addressLocality": "Pune",
+    "addressRegion": "Maharashtra",
+    "postalCode": "411001",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 18.5362,
+    "longitude": 73.8938
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "07:00",
+      "closes": "21:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Saturday",
+      "opens": "08:00",
+      "closes": "22:00"
+    },
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": "Sunday",
+      "opens": "08:00",
+      "closes": "20:00"
+    }
+  ],
+  "sameAs": [
+    "https://www.instagram.com/brewandbean",
+    "https://www.facebook.com/brewandbean",
+    "https://twitter.com/brewandbean"
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "2847"
+  }
+};
 
 export default function Home() {
   return (
     <div>
+      <SEO
+        title="Home"
+        description="Brew & Bean - Pune's premium coffee shop offering handcrafted beverages, ethically sourced beans, and a cozy atmosphere. Visit us in Koregaon Park for the perfect cup."
+        canonical="/"
+        keywords="coffee shop pune, best coffee koregaon park, premium coffee, espresso, cappuccino, cold brew, cafe pune, specialty coffee, coffee near me"
+        jsonLd={homeJsonLd}
+      />
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
         {/* Background */}
